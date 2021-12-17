@@ -241,7 +241,7 @@ $location->store_id = $data->store_id;
 $location->product_id = $data->product_id;
 
 -------------
-CREATE TABLE `Product` (
+CREATE TABLE `Restaurant` (
   `id` int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   `barcode` varchar(255),
   `name` varchar(100),
@@ -249,20 +249,21 @@ CREATE TABLE `Product` (
   `quantity` float,
   `locationid` int(11) NOT NULL
 );
-CREATE TABLE `Store` (
+CREATE TABLE `Food Type` (
   `id` int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(100),
   `locationid` int(11) NOT NULL
-  `productid` int(11) NOT NULL
+  `restaurantid` int(11) NOT NULL
 );
 CREATE TABLE `Location` (
   `id` int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(100),
   `state` varchar(100)
-  `storeid` int(11) NOT NULL
-  `productid` int(11) NOT NULL
+  `FoodTypeid` int(11) NOT NULL
+  `restaurantid` int(11) NOT NULL
 );
 
 CREATE DATABASE mydb;
 
 use mydb;
+
